@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Table, Button } from "react-bootstrap";
-import Bike from "../../Home/Bike/Bike";
+
 
 const ManageAllBike = () => {
   const [bikes, setBikes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/bikes")
+    fetch("https://salty-retreat-73850.herokuapp.com/bikes")
       .then((res) => res.json())
       .then((data) => setBikes(data));
   }, []);
@@ -13,7 +13,7 @@ const ManageAllBike = () => {
   const handleDelete = (id) => {
     const process = window.confirm("Do You Want to Delete this Product?");
     if (process) {
-      const url = `http://localhost:5000/bikes/${id}`;
+      const url = `https://salty-retreat-73850.herokuapp.com/bikes/${id}`;
       fetch(url, {
         method: "DELETE",
       })

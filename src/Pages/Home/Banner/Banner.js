@@ -29,6 +29,7 @@ const Banner = () => {
     const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
+  
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -43,7 +44,7 @@ const Banner = () => {
   };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, mt:-10 }}>
         <Paper
           square
           elevation={0}
@@ -64,7 +65,7 @@ const Banner = () => {
           enableMouseEvents
         >
           {images.map((step, index) => (
-            <div key={step.label}>
+            <div key={images.imgPath}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
                   component="img"

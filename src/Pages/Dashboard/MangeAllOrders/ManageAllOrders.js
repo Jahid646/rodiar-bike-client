@@ -10,13 +10,13 @@ const ManageAllOrders = () => {
   const { _id } = bikes;
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-orders")
+    fetch("https://salty-retreat-73850.herokuapp.com/all-orders")
       .then((res) => res.json())
       .then((data) => setBikes(data));
   }, [bikes]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/single-order/${_id}`)
+    fetch(`https://salty-retreat-73850.herokuapp.com/single-order/${_id}`)
       .then((res) => res.json())
       .then((data) => setSingleBike(data));
   }, []);
@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
     newBike.status = newStatus;
     setSingleBike(newBike);
 
-    fetch(`http://localhost:5000/order-status/${_id}`, {
+    fetch(`https://salty-retreat-73850.herokuapp.com/order-status/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -43,7 +43,7 @@ const ManageAllOrders = () => {
     const process = window.confirm("Do You Want to Cancel this Order?");
     if(process){
 
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://salty-retreat-73850.herokuapp.com/order/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -71,7 +71,7 @@ const ManageAllOrders = () => {
             <thead>
               <tr>
                 <th>Bike Name</th>
-                <th>Order By</th>
+                
                 <th>User Email</th>
                 <th>User Id</th>
                 <th>Price $</th>
@@ -84,7 +84,7 @@ const ManageAllOrders = () => {
               {bikes.map((user) => (
                 <tr key={user.uid} >
                   <td>{user.bike?.name}</td>
-                  <td>{user.name}</td>
+                  
                   <td>{user.email}</td>
                   <td>{user.uid}</td>
                   <td>{user.bike?.price}</td>

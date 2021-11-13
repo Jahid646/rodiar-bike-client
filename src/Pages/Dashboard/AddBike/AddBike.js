@@ -8,7 +8,7 @@ const AddBike = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-    axios.post('http://localhost:5000/bikes', data)
+    axios.post('https://salty-retreat-73850.herokuapp.com/bikes', data)
             .then( res =>{ 
          if(res.data.insertedId){
              alert('Added Successfully')

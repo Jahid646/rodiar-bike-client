@@ -7,7 +7,7 @@ import Header from '../Shared/Header/Header';
 const AllBikes = () => {
     const [bikes, setBikes] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/bikes")
+      fetch("https://salty-retreat-73850.herokuapp.com/bikes")
         .then((res) => res.json())
         .then((data) => setBikes(data));
     }, []);
@@ -17,7 +17,7 @@ const AllBikes = () => {
     
         <div className="text-center mt-5 pt-5">
           
-          <h2>Our All Bikes  </h2>
+          <h2>Our All <span className="text-danger">Bikes</span> </h2>  
          
         </div>
         

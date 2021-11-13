@@ -20,7 +20,7 @@ const Header = () => {
             <img
               src={logo}
               height="60"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top img-fluid"
               alt="Logo"
             />
           </NavLink>
@@ -46,15 +46,12 @@ const Header = () => {
 
              
 
-              
-
-             
-                 
+        
 
               {user.email
                 ? [
 
-                  <NavLink className="nav-link" aria-current="page" exact to="/dashboard">
+                  <NavLink className="nav-link" key="dashboard" aria-current="page" exact to="/dashboard">
                 Dashboard
               </NavLink>,
                   <p key={user.email} className="mt-2 mx-3 mb-lg-0 mb-3">

@@ -8,7 +8,7 @@ const MyOrders = () => {
    console.log(user.uid);
     useEffect(()=>{
 
-        fetch(`http://localhost:5000/orders/${user.uid}`)
+        fetch(`https://salty-retreat-73850.herokuapp.com/orders/${user.uid}`)
         .then(res => res.json())
         .then(data => setMyOrders(data));
     }, [])
@@ -16,7 +16,7 @@ const MyOrders = () => {
     const handleRemove =(id) =>{
         const process = window.confirm("Do You Want to Remove this Order?");
         if(process){
-            fetch(`http://localhost:5000/order/${id}`,{
+            fetch(`https://salty-retreat-73850.herokuapp.com/order/${id}`,{
                 method: "DELETE",
             })
             .then(res => res.json())

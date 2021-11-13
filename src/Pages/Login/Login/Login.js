@@ -70,7 +70,7 @@ const Login = () => {
         <Col xs={12} md={4} className="mx-auto">
           <Card className="shadow">
            
-            <Card.Title className="mx-auto my-5">Tour<span className="orange">X</span> </Card.Title>
+            <Card.Title className="mx-auto text-danger my-5 tw-bolder">RODIAR</Card.Title>
             <Card.Body>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <label className=" mb-2">Email</label>
@@ -92,13 +92,13 @@ const Login = () => {
                   value="Login"
                 />
               </form>
-              <Button
+              {/* <Button
                 onClick={handleSignIn}
                 variant="outline-success rounded-pill mb-3"
                 style={{ width: "100%" }}
               >
                <i className="fab fa-google p-2"></i> Continue with Google
-              </Button>{" "}
+              </Button>{" "} */}
               <NavLink className="mx-auto orange" to="/register">
                 New User?
               </NavLink>

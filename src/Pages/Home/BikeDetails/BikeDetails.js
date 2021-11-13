@@ -19,7 +19,7 @@ const BikeDetails = () => {
       
         useEffect(() => {
           fetch(
-            `http://localhost:5000/bikes/${id}`
+            `https://salty-retreat-73850.herokuapp.com/bikes/${id}`
           )
             .then((res) => res.json())
             .then((data) =>
@@ -36,7 +36,7 @@ const BikeDetails = () => {
           data.bike = singleBike;
           data.uid = user.uid;
           data.status = 'Pending';
-          fetch("http://localhost:5000/orders", {
+          fetch("https://salty-retreat-73850.herokuapp.com/orders", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -87,7 +87,7 @@ const BikeDetails = () => {
           <Col md={6}>
           <div className="mt-2">
           <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-              <input className="m-2" defaultValue={user.displayName} {...register("name")} />
+             
               <br />
               <input className="m-2"
                 defaultValue={user.email}
