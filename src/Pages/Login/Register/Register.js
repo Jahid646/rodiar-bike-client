@@ -18,7 +18,7 @@ const Register = () => {
   const {
     registerWithEmailAndPassword,
     setUser,
-    writeDatabase,
+    
     setIsLoading,
     signInUsingGoogle,
   } = useAuth();
@@ -42,7 +42,7 @@ const Register = () => {
         .then(res => res.json())
         .then(data => console.log(data));
 
-        writeDatabase(data.name, data.email, user.uid);
+        
         history.push(url);
       })
       .catch((error) => {

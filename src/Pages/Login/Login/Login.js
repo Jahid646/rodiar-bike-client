@@ -21,7 +21,7 @@ const Login = () => {
 
   const {
     loginWithEmailAndPassword,
-    readDatabase,
+    
     signInUsingGoogle,
     setUser,
     setIsLoading,
@@ -51,7 +51,7 @@ const Login = () => {
     loginWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        readDatabase(user, user.uid);
+    
         history.push(url);
       })
       .catch((error) => {
